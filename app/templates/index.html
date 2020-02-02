@@ -1,4 +1,19 @@
 {% extends 'base.html' %}
 {% block content %}
-    
+<div class = "container-fluid">
+    <div class = "row p-4">
+        {% for source in sources%}
+        <div class = "col-sm-3">
+            <div class = "card">
+                <div class = "card-body">
+                    <a href = "/articles/{{ source.name }}">
+                        <h4>{{ source.name }}</h4>
+                    </a>
+                    <p>{{ source.description | truncate(80) }}</p>
+                </div>
+            </div><br>
+        </div>
+        {% endfor %}
+    </div>
+</div>
 {% endblock %}
