@@ -1,3 +1,6 @@
 # Byte Compiled files
 __pycache__/
 *.py[cod]
+
+# Environment Startup files
+start.ps1
