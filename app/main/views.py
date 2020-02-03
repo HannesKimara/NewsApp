@@ -2,6 +2,8 @@ from flask import render_template, redirect, url_for
 from . import main
 from ..request import get_sources, process_sources, get_articles, process_articles
 
+ALL_CATEGORIES = ['sports', 'entertainment', 'business', 'health', 'technology']
+
 @main.route("/")
 def index():
     news_sources = get_sources()
@@ -25,8 +27,11 @@ def articles(source_id):
 
 @main.route("/category/<category_name>")
 def category(category_name):
-    category_articles = get_articles("top-headlines",{"category": str(category_name), "country": "us"})
-    if category_articles == False:
+    if category_name in ALL_CATEGORIES:
+        category_articles = get_articles("top-headlines",{"category": str(category_name), "country": "us"})
+        if category_articles == False:
+            return redirect(url_for('main.index'))
+    else:
         return redirect(url_for('main.index'))
 
     data = process_articles(category_articles)
