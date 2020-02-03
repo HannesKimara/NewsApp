@@ -36,12 +36,12 @@ def process_sources(data):
 
     return all_sources
 
-def get_articles(query_params):
+def get_articles(endpoint, query_params):
     """
     Function that queries articles from newsapi
     """
     query_params["apiKey"] = API_KEY
-    response = requests.get(BASE_URL+"everything", params=query_params)
+    response = requests.get(BASE_URL+endpoint, params=query_params)
 
     if response.status_code == 200:
         data = response.json()

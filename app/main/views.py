@@ -15,7 +15,20 @@ def red_articles():
 
 @main.route("/articles/<source_id>")
 def articles(source_id):
-    source_articles = get_articles({"sources": str(source_id)})
+    source_articles = get_articles("everything", {"sources": str(source_id)})
+    if source_articles == False:
+        return redirect(url_for('main.index'))
+
     data = process_articles(source_articles)
+
+    return render_template("articles.html", headlines = data)
+
+@main.route("/category/<category_name>")
+def category(category_name):
+    category_articles = get_articles("top-headlines",{"category": str(category_name), "country": "us"})
+    if category_articles == False:
+        return redirect(url_for('main.index'))
+
+    data = process_articles(category_articles)
 
     return render_template("articles.html", headlines = data)
