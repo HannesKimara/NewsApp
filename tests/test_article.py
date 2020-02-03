@@ -9,7 +9,7 @@ class ArticleTest(unittest.TestCase):
         """
         Setup method that runs before every test
         """
-        self.new_article = Article(3, "Hannes Kimara", "Hannes Kimara", "https://hanneskimara.com", "https://hanneskimara.com/stash/images/1", "The Article with the Information", "2020-01-15T09:10:59Z")
+        self.new_article = Article("Hannes Kimara", "Hannes Kimara", "https://hanneskimara.com", "https://hanneskimara.com/stash/images/1", "The Article with the Information", "2020-01-15T09:10:59Z")
 
     def test_instance(self):
         """

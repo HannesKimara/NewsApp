@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
+{% import 'macros.html' as macro %}
 {% block content %}
-    <p>{{ source_id }}</p>
+<div class = "container-fluid">
+    <div class = "row">
+        <div class = "col-sm-8">
+            {{ macro.generateCarousel(headlines[:20]) }}
+        </div>
+        <div class = "col-sm-4">
+        </div>
+    </div>
+    <br>
+    <div class = "row na-articles">
+        {{ macro.newsTiles(headlines)}}
+    </div>
+</div>
 {% endblock %}

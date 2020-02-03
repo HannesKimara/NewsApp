@@ -1,5 +1,5 @@
 import requests
-from .models import Source
+from .models import Source, Article
 
 API_KEY, BASE_URL, SOURCE_API_URL = None, None, None
 
@@ -35,3 +35,32 @@ def process_sources(data):
         all_sources.append(new_source)
 
     return all_sources
+
+def get_articles(query_params):
+    """
+    Function that queries articles from newsapi
+    """
+    query_params["apiKey"] = API_KEY
+    response = requests.get(BASE_URL+"everything", params=query_params)
+
+    if response.status_code == 200:
+        data = response.json()
+        return data
+    else:
+        return False
+
+def process_articles(data):
+    """
+    Function that processes articles from get_articles
+    """
+
+    all_articles = []
+
+    for art in data['articles']:
+        if art['urlToImage'] != "null" and art['urlToImage'] != None :
+            new_article = Article(art['author'], art['title'], art['url'], art['urlToImage'], art['description'], art['publishedAt'])
+            all_articles.append(new_article)
+        else:
+            pass
+    
+    return all_articles

@@ -1,11 +1,10 @@
 from flask import render_template, redirect, url_for
 from . import main
-from ..request import get_sources, process_sources
+from ..request import get_sources, process_sources, get_articles, process_articles
 
 @main.route("/")
 def index():
     news_sources = get_sources()
-
     data = process_sources(news_sources)
     
     return render_template('index.html', sources = data)
@@ -15,5 +14,8 @@ def red_articles():
     return redirect(url_for('main.index'))
 
 @main.route("/articles/<source_id>")
-def articles(source_id = None):
-    return render_template("articles.html", source_id = source_id)
+def articles(source_id):
+    source_articles = get_articles({"sources": str(source_id)})
+    data = process_articles(source_articles)
+
+    return render_template("articles.html", headlines = data)
