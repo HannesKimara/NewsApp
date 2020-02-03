@@ -23,6 +23,13 @@ On unix based OS run:
 $ export NEWS_API_KEY="<NEWS_API_KEY>"
 ```
 
+To start the server run
+```bash
+$ python manage.py serve
+```
+
+Or alternatively configure your API Key in start.sh and run it
+
 ## Testing
 Conduct Unittest by running
 `$ python manage.py test`
