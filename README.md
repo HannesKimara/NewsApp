@@ -1,4 +1,4 @@
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/HannesKimara/NewsApp/blob/master/LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/HannesKimara/NewsApp/blob/master/LICENSE) [![codebeat badge](https://codebeat.co/badges/49da4007-f4c8-4cf1-b584-1254811f472f)](https://codebeat.co/projects/github-com-hanneskimara-newsapp-master)
 
 # News App
 Keep up with current news and top headlines in different caategories spanning from politics to sports
