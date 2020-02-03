@@ -1,1 +1,42 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/HannesKimara/NewsApp/blob/master/LICENSE)
+
 # News App
+Keep up with current news and top headlines in different caategories spanning from politics to sports
+
+## Getting Started
+To clone this repository run in a virtual environment
+```bash
+$ git clone https://github.com/HannesKimara/NewsApp.git
+$ cd NewsApp
+$ pip install -r requirements.txt
+```
+
+Export or set environment variables
+On windows powershell run:
+
+```bash
+$env:NEWS_API_KEY="<NEWS_API_KEY>"
+```
+
+On unix based OS run:
+```bash
+$ export NEWS_API_KEY="<NEWS_API_KEY>"
+```
+
+## Testing
+Conduct Unittest by running
+`$ python manage.py test`
+
+## Author
+This project was created by Hannes Kimara
+
+## Built With
+ - Python 3.6
+ - Flask 1.1.1
+ - Bootstrap 4.3.1
+
+## License
+This is licensed under MIT License Copyright(2020) Hannes Kimara
+
+
+
