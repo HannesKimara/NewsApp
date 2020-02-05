@@ -28,7 +28,8 @@ To start the server run
 $ python manage.py serve
 ```
 
-Or alternatively configure your API Key in start.sh and run it
+Or alternatively configure your API Key in start.sh and run it.
+
 Visit the live [link](https://indjournal.herokuapp.com/) here
 
 ## Testing
